@@ -1,0 +1,64 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang6154{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa200\sl276\slmult1\lang10\f0\fs22 MAINACTIVITY.JAVA\par
+package com.example.tngabe;\par
+\par
+import android.os.Bundle;\par
+import android.app.Activity;\par
+import android.view.Menu;\par
+import android.view.View;\par
+import android.widget.Button;\par
+import android.widget.EditText;\par
+import android.widget.TabHost;\par
+import android.widget.TextView;\par
+\par
+\par
+public class MainActivity extends Activity \{\par
+\par
+    @Override\par
+    protected void onCreate(Bundle savedInstanceState) \{\par
+        super.onCreate(savedInstanceState);\par
+        setContentView(R.layout.activity_main);\par
+\par
+        TabHost Tab = (TabHost) findViewById(R.id.tabHost);\par
+        final TextView textView = (TextView) findViewById(R.id.textView23);\par
+        final EditText editText1 = (EditText) findViewById(R.id.editText);\par
+        Button button = (Button) findViewById(R.id.button);\par
+        final String t[]=\{" "\};\par
+\par
+        Tab.setup();\par
+\par
+        TabHost.TabSpec tabspec = Tab.newTabSpec("Glosario");\par
+        tabspec.setContent(R.id.Glosario);\par
+        tabspec.setIndicator("Glosario");\par
+        Tab.addTab(tabspec);\par
+\par
+        tabspec = Tab.newTabSpec("Traductor");\par
+        tabspec.setContent(R.id.Traductor);\par
+        tabspec.setIndicator("Traductor");\par
+        Tab.addTab(tabspec);\par
+\par
+        button.setOnClickListener(new View.OnClickListener() \{\par
+            @Override\par
+            public void onClick(View v) \{\par
+\tab //Sistema "BETA" para traducion (Todavia en contrucion...)\par
+                String x = String.valueOf(editText1.getText().toString());\par
+                textView.setText(String.format("Hoy"));\par
+\par
+            \}\par
+        \});\par
+\par
+\par
+\par
+    \}\par
+\par
+    @Override\par
+    public boolean onCreateOptionsMenu(Menu menu) \{\par
+        // Inflate the menu; this adds items to the action bar if it is present.\par
+        getMenuInflater().inflate(R.menu.main, menu);\par
+        return true;\par
+    \}\par
+    \par
+\}\line\par
+\par
+\par
+}
